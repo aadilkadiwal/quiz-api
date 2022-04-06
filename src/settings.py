@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third party
     'django_extensions',
+    # Custom
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom config
+AUTH_USER_MODEL = "core.User"
