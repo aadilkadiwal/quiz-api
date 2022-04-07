@@ -24,7 +24,7 @@ class AbstractBaseSet(UuidMixin, TimestampMixin):
 class User(AbstractUser, AbstractBaseSet):
     username = models.CharField(max_length=50, unique=True, blank=True, null=True)
     email = models.EmailField(unique=True)
-    avatar = models.ImageField(upload_to='avatars', null=True, blank=False)        
+    avatar = models.ImageField(upload_to='avatars', null=True, blank=True)        
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
