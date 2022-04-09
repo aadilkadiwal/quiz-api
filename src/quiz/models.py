@@ -26,4 +26,4 @@ class Answer(AbstractBaseSet):
     question = models.ForeignKey(Question, related_name='answers', on_delete=models.CASCADE)
     answer = models.CharField(max_length=255)
     is_right = models.BooleanField(default=False)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)                   
+    # user = models.OneToOneField(User, on_delete=models.CASCADE)                   
