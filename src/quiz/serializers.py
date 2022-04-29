@@ -5,18 +5,18 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = quiz_models.Category
-        field = ['name',]
+        fields = ['name',]
 
 class QuestionSerializer(serializers.ModelSerializer):
     category = serializers.CharField(max_length=50)
 
     class Meta:
         model = quiz_models.Question
-        field = ['category', 'question', 'level',]
+        fields = ['category', 'question', 'level',]
 
 class AnswerSerializer(serializers.ModelSerializer):
     question = serializers.CharField(max_length=500)
 
     class Meta:
         model = quiz_models.Answer
-        field = ['question', 'answer', 'is_right',]                 
+        fields = ['question', 'answer', 'is_right',]                 
