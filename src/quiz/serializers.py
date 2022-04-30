@@ -5,18 +5,23 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = quiz_models.Category
-        fields = ['name',]
+        fields = ['name', 'image']
 
 class QuestionSerializer(serializers.ModelSerializer):
     category = serializers.CharField(max_length=50)
 
+    def create(self, validated_data):
+        category_name = validated_data.pop("category")
+        category_id = quiz_models.Category.objects.get(name=category_name)
+        return super().create({**validated_data, "category": category_id})    
+
     class Meta:
         model = quiz_models.Question
-        fields = ['category', 'question', 'level',]
+        fields = ['category', 'question', 'level']
+
 
 class AnswerSerializer(serializers.ModelSerializer):
-    question = serializers.CharField(max_length=500)
 
     class Meta:
         model = quiz_models.Answer
-        fields = ['question', 'answer', 'is_right',]                 
+        fields = ['question', 'answer', 'is_right']                 

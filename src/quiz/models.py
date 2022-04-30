@@ -1,9 +1,9 @@
 from django.db import models
-from core.models import AbstractBaseSet, User
+from core.models import AbstractBaseSet
 
 class Category(AbstractBaseSet):
     name = models.CharField(max_length=50, unique=True)
-    image = models.ImageField(upload_to='category')
+    image = models.ImageField(upload_to='category', null=True, blank=True)
 
     def __str__(self):
         return self.name
