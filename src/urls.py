@@ -27,4 +27,5 @@ router.registry.extend(quiz_router.registry)
 urlpatterns = [
     path('super-manager/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('', include('quiz.urls')),
 ]
