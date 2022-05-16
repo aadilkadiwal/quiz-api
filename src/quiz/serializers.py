@@ -5,7 +5,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = quiz_models.Category
-        fields = ['name', 'image']
+        fields = ['name', 'description', 'image']
 
 class QuestionSerializer(serializers.ModelSerializer):
     category = serializers.CharField(max_length=50)

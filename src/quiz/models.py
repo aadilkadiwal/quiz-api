@@ -3,7 +3,8 @@ from core.models import AbstractBaseSet
 
 class Category(AbstractBaseSet):
     name = models.CharField(max_length=50, unique=True)
-    image = models.ImageField(upload_to='category', null=True, blank=True)
+    description = models.TextField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to='category', default='defaultcategory.jpg')
 
     def __str__(self):
         return self.name

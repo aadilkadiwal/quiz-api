@@ -7,8 +7,8 @@ from .models import (
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("uuid", "name", 'image', 'created', 'modified',)
-    search_fields = ("uuid", "name",)
+    list_display = ('uuid', 'name', 'description', 'image', 'created', 'modified',)
+    search_fields = ('uuid', 'name',)
 
 class AnswerInLineModel(admin.TabularInline):
     model = Answer
